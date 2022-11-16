@@ -1,0 +1,11 @@
+/.idea/**
+/.terraform/**
+/terragrunt/dev/.terragrunt-cache/**
+/terragrunt/dev/.terraform.lock.hcl
+/terragrunt/prod/.terragrunt-cache/**
+/terragrunt/prod/.terraform.lock.hcl
+/.terraform.lock.hcl
+/terraform.tfstate
+/terraform.tfstate.backup
+/terragrunt_playground.iml
+
