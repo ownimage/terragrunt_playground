@@ -3,6 +3,6 @@ terraform {
 }
 
 inputs = {
-  docker_name = "prod_nginx"
+  env_name = "prod"
   docker_port = 8082
 }
