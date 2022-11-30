@@ -1,14 +1,12 @@
-variable "env" {
-  type        = map
-  description = "environment"
-#  default     = { env_name = "missing", nginx_port = 8080 }
+module "constants" {
+  source      = "../constants"
 }
-
 
 module "nginx" {
   source      = "../nginx"
   env_name    = var.env["env_name"]
   nginx_port  = var.env["nginx_port"]
+  docker_image_name = module.constants.constants["docker_image_name"]
 }
 
 module "main" {
