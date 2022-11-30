@@ -9,8 +9,9 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_image" "nginx" {
-  name = "nginx:1.23.2"
+resource "docker_image" "main" {
+  name = "sha256:404359394820dad4c8f210f935939f5890a02ccf82302e1a1068bd0723149736"
+  #  name = "nginx:1.22.1"
   # if keep_locally is set to false it will remove the image from the docker cache when you do a
   # terragrunt destroy
   # this will fail as there is a shared cache for prod and dev as they both on the local machine
@@ -24,16 +25,16 @@ variable "env_name" {
   default     = "missing"
 }
 
-variable "docker_port" {
+variable "main_port" {
   type        = number
-  description = "docker external_port of the nginx instance"
+  description = "docker external_port of the main instance"
 }
 
 resource "docker_container" "nginx" {
-  image = docker_image.nginx.name
-  name  = "${var.env_name}_nginx"
+  image = docker_image.main.name
+  name  = "${var.env_name}_main"
   ports {
     internal = 80
-    external = var.docker_port
+    external = var.main_port
   }
 }

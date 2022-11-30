@@ -1,8 +1,5 @@
-terraform {
-  source = "../modules"
-}
-
 inputs = {
   env_name = "prod"
-  docker_port = 8082
+  main_port = 8083
+  nginx_port = 8084
 }
