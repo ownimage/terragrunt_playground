@@ -1,7 +1,5 @@
-variable "env" {
-  type        = map
-  description = "environment"
-  default     =   {
+locals {
+  env     =   {
     env_name = "dev",
     nginx_port = 9091,
     main_port = 9092,
