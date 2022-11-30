@@ -12,8 +12,13 @@ module "nginx" {
 }
 
 module "main" {
-  source      = "../main"
-  env_name    = var.env["env_name"]
-  main_port  = var.env["main_port"]
+  source    = "../main"
+  env_name  = var.env["env_name"]
+  main_port = var.env["main_port"]
 }
 
+module "server" {
+  source    = "../server"
+  env_name  = var.env["env_name"]
+  server_port = var.env["server_port"]
+}
