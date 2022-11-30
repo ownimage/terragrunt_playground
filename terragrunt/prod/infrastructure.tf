@@ -1,5 +1,5 @@
 module "combined" {
-  source = "github.com/ownimage/terragrunt_playground//terragrunt/modules/combined?ref=v1.0"
+  source = "github.com/ownimage/terragrunt_playground//terragrunt/modules/combined?ref=v1.1"
   env = var.env
 }
 
